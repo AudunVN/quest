@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+		<script src="smoothie.js"></script>
+		<style>
+			@font-face {
+				font-family: unifont;
+				src: url("https://24e3021dd42ba493ca4b980e89f1158d0706cb0f.googledrive.com/host/0B-jbiuTm6FjRVUdKSWRnRFlLS0k/unifont-8.0.01.ttf");
+			}
+			
+			html {
+				background: black;
+			}
+
+			.appContainer {
+				position: absolute;
+				background-color: #001;
+				margin: 0 auto;
+				border: 2px solid #13B;
+				padding: 0.5em;
+				font-family: "Unifont", sans-serif;
+				font-size: 16px;
+				color: white;
+				left: 0.25em;
+				right: 0.25em;
+				bottom: 0.25em;
+				top: 0.25em;
+				min-height: 600px;
+				min-width: 600px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="appContainer calendarActive">
+			<div class="notifier"></div>
+			<nav class="tabber">
+				<div class="logo"></div>
+				<ul>
+					<li>home</li>
+					<li>calendar</li>
+					<li>notes</li>
+					<li>rss/news</li>
+					<li>geodata</li>
+					<li>tools</li>
+				</ul>
+			</nav>
+			<div class="tabs">
+				<div class="home">
+					<!-- text summary -->
+				</div>
+				<div class="calendar">
+					<!-- gcal embed -->
+					<iframe></iframe>
+				</div>
+				<div class="notes">
+					<!-- gdocs embed -->
+					<iframe></iframe>
+				</div>
+				<div class="rss">
+					<!-- js rss: https://developers.google.com/feed/ -->
+				</div>
+				<div class="geodata">
+					<!-- HowIs, local/remote geodata lookup -->
+				</div>
+				<div class="tools">
+					<!-- misc. useful things, user-defined code -->
+				</div>
+			</div>
+			<div class="ticker"><!-- text summary --></div>
+		</div>
+		<script>
+			var updateRate = 100;
+			var updateThrottle = 10000;
+			
+			function log(terminalIdentifier, outputString, timestamp) {
+				$(terminalIdentifier).prepend('<div class="outputLine"><span class="timestamp">'+timestamp+'</span> <span class="output">'+outputString+'</span></div>');
+				$(terminalIdentifier).animate({scrollTop:$(terminalIdentifier)[0].scrollHeight}, 1000);
+			}
+			
+			var updateTimer;
+			
+			function updateInterface() {
+				var configFile = "config.json";
+
+				if (connectionAttempted) {
+					$.get(configFile).success(function(data) {
+						var parsedConfig = $.parseJSON(data);
+						var calendarURL = parsedConfig.calendarURL;
+						var notepadURL = parsedConfig.notepadURL;
+					}).error(function(jqXHR, textStatus, errorThrown) {
+						updateThrottle = 10000;
+						log(".term","Interface update failed: Unable to contact vessel, error code "+textStatus+" "+errorThrown+". Retrying in ten seconds.","&nbsp;>");
+					});
+				}
+				updateTimer = setTimeout(function(){ updateInterface(); }, updateRate+updateThrottle);
+			}
+
+		</script>
+	</body>
+</html>
