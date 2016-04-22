@@ -32,13 +32,375 @@
 				min-height: 600px;
 				min-width: 600px;
 			}
+			
+			/* logo styles begin */
+			
+			.logo {
+				position: relative;
+				top: 0;
+				left: 0;
+				padding: 1em;
+				font-size: 0.5em;
+			}
+			
+			.pawPrint div,
+			.pawPrint .toe::after,
+			.pawPrint .toe::before {
+				box-shadow: 0 0 0.25em 0.0em #1A2F5D;
+			}
+
+			.pawPrint div,
+			.pawPrint .toe::after,
+			.pawPrint .toe::before,
+			.corner.topRight::before,
+			.corner.bottomRight::before,
+			.corner.topLeft::before,
+			.corner.bottomLeft::before {
+				background: #1A2F5D;
+				border-right-color: #1A2F5D !important;
+				border-left-color: #1A2F5D !important;
+			}
+
+			.outerContainer > .corner,
+			.outerContainer > .edge {
+				/*box-shadow: 0 0 0.5em 0.1em #1A2F5D;*/
+			}
+
+			.innerContainer,
+			.edge,
+			.corner {
+				background: #F9F9F9;
+			}
+
+			.innerContainer {
+				width: 11em;
+				height: 11em;
+				position: absolute;
+				top: 1em;
+				left: 1em;
+			}
+
+			.edge {
+				position: absolute;
+			}
+
+			.edge.left {
+				height: 11em;
+				width: 1em;
+				left: 0;
+				top: 1em;
+			}
+
+			.edge.top {
+				height: 1em;
+				width: 11em;
+				top: 0;
+				left: 1em;
+			}
+
+			.edge.right {
+				height: 11em;
+				width: 1em;
+				right: 0;
+				top: 1em;
+			}
+
+			.edge.bottom {
+				height: 1em;
+				width: 11em;
+				bottom: 0;
+				left: 1em;
+			}
+
+			.corner {
+				width: 1.41421356em;
+				height: 1.41421356em;
+				transform: rotate(45deg);
+				position: absolute;
+			}
+
+			.corner.topLeft::before,
+			.corner.bottomLeft::before {
+				content: '';
+				position: absolute;
+				top: 0;
+				 right: 0;
+				border-top: 1em solid white;
+				border-left: 1em solid red;
+				width: 0;
+			}
+
+			.corner.topRight::before,
+			.corner.bottomRight::before {
+				content: '';
+				position: absolute;
+				bottom: 0;
+				 left: 0;
+				border-bottom: 1em solid white;
+				border-right: 1em solid red;
+				width: 0;
+			}
+
+			.corner.topLeft {
+				top: 0em;
+				left: 1em;
+				transform-origin: 0% 0%;
+			}
+
+			.corner.topRight {
+				top: 1em;
+				right: 0em;
+				transform-origin: 100% 0%;
+			}
+
+			.corner.bottomLeft {
+				bottom: 1em;
+				left: 0em;
+				transform-origin: 0% 100%;
+			}
+
+			.corner.bottomRight {
+				bottom: 0em;
+				right: 1em;
+				transform-origin: 100% 100%;
+			}
+
+			.pawPrint .toe.one {
+				top: 5em;
+				left: 1em;
+			}
+
+			.pawPrint .toe.two {
+				top: 2em;
+				left: 4em;
+			}
+
+			.pawPrint .toe.three {
+				top: 2em;
+				left: 7em;
+			}
+
+			.pawPrint .toe.four {
+				top: 5em;
+				left: 10em;
+			}
+
+			.pawPrint .toe {
+				width: 2em;
+				height: 2em;
+				position: absolute;
+			}
+
+			.pawPrint .leftPad {
+				width: 4.24264068em;
+				height: 1em;
+				position: absolute;
+				top: 9em;
+				left: 3em;
+				transform-origin: 0% 0%;
+				transform: rotate(-45deg);
+			}
+
+			.pawPrint .rightPad {
+				width: 4.24264068em;
+				height: 1em;
+				position: absolute;
+				top: 9em;
+				right: 3em;
+				transform-origin: 100% 0%;
+				transform: rotate(45deg);
+			}
+
+			.pawPrint .topPad {
+				width: 1em;
+				height: 1em;
+				position: absolute;
+				top: 6em;
+				left: 6em;
+			}
+
+			.pawPrint .bottomCenterPad {
+				width: 1em;
+				height: 1em;
+				position: absolute;
+				bottom: 2em;
+				left: 6em;
+			}
+
+			.pawPrint .bottomLeftPad {
+				width: 1em;
+				height: 1em;
+				position: absolute;
+				bottom: 1em;
+				left: 4em;
+			}
+
+			.pawPrint .bottomRightPad {
+				width: 1em;
+				height: 1em;
+				position: absolute;
+				bottom: 1em;
+				right: 4em;
+			}
+
+			.pawPrint .bottomLeftWallPad {
+				width: 1em;
+				height: 2em;
+				position: absolute;
+				bottom: 2em;
+				left: 3em;
+			}
+
+			.pawPrint .bottomRightWallPad {
+				width: 1em;
+				height: 2em;
+				position: absolute;
+				bottom: 2em;
+				right: 3em;
+			}
+
+			.pawPrint .bottomCenterPad {
+				width: 1em;
+				height: 1em;
+				position: absolute;
+				bottom: 2em;
+				left: 6em;
+			}
+
+			.pawPrint .corner {
+				width: 1.41421356em;
+				height: 1.41421356em;
+				transform: rotate(45deg);
+				position: absolute;
+				transform-origin: 0% 0%;
+			}
+
+			.pawPrint .fill {
+				position: absolute;
+			}
+
+			.pawPrint span {
+				position: absolute;
+				text-align: center;
+				bottom: 0.99em;
+				width: 100%;
+				z-index: 5;
+				font-family: "Baumans", sans-serif;
+				color: white;
+				font-size: 2.2em;
+				text-transform: lowercase;
+			}
+
+			.pawPrint .fill.bottom {
+				bottom: 2em;
+				left: 4em;
+				width: 5em;
+				height: 2.85em;
+			}
+
+			.pawPrint .fill.top {
+				bottom: 3em;
+				left: 5.25em;
+				width: 2.5em;
+				height: 3em;
+			}
+
+			.pawPrint .corner.one {
+				bottom: 1.57em;
+				left: 4em;
+			}
+
+			.pawPrint .corner.two {
+				bottom: 1.57em;
+				left: 5em;
+			}
+
+			.pawPrint .corner.three {
+				bottom: 1.57em;
+				right: 3.57em;
+			}
+
+			.pawPrint .corner.four {
+				bottom: 1.57em;
+				right: 2.57em;
+			}
+
+			.pawPrint .toe::after {
+				width: 1.41421356237em;
+				height: 1.41421356237em;
+				content: '';
+				position: absolute;
+				top: -1em;
+				left: 1em;
+				transform: rotate(45deg);
+				transform-origin: 0% 0%;
+			}
+
+			.pawPrint .toe::before{
+				width: 1.41421356237em;
+				height: 1.41421356237em;
+				content: '';
+				position: absolute;
+				top: 2em;
+				left: 0em;
+				transform: rotate(-45deg);
+				transform-origin: 0% 0%;
+			}
+
+			.outerContainer {
+				position: absolute;
+				width: 13em;
+				height: 13em;
+				background: none;
+				top: 50%;
+			  left: 50%;
+			  transform: translate(-50%, -50%);
+			}
+			
+			/* logo styles end */
 		</style>
 	</head>
 	<body>
 		<div class="appContainer calendarActive">
 			<div class="notifier"></div>
 			<nav class="tabber">
-				<div class="logo"></div>
+				<div class="logo">
+					<div class="outerContainer">
+						<div class="corner topLeft"></div>
+						<div class="corner topRight"></div>
+						<div class="corner bottomLeft"></div>
+						<div class="corner bottomRight"></div>
+						<div class="edge left"></div>
+						<div class="edge top"></div>
+						<div class="edge right"></div>
+						<div class="edge bottom"></div>
+						<div class="innerContainer"></div>
+						<div class="pawPrint">
+							<div class="toe one"></div>
+							<div class="toe two"></div>
+							<div class="toe three"></div>
+							<div class="toe four"></div>
+							<div class="pawPad">
+								<div class="leftPad"></div>
+								<div class="rightPad"></div>
+								<div class="topPad"></div>
+								<div class="bottomCenterPad"></div>
+								<div class="bottomLeftPad"></div>
+								<div class="bottomLeftWallPad"></div>
+								<div class="bottomRightWallPad"></div>
+								<div class="bottomRightPad"></div>
+								<div class="corner one"></div>
+								<div class="corner two"></div>
+								<div class="corner three"></div>
+								<div class="corner four"></div>
+								<div class="fill top"></div>
+								<span class="label">space</span>
+								<div class="fill bottom"></div>
+							</div>
+						</div>
+						
+					</div>
+				</div>
 				<ul>
 					<li>home</li>
 					<li>calendar</li>
@@ -54,7 +416,7 @@
 				</div>
 				<div class="calendar">
 					<!-- gcal embed -->
-					<iframe src="https://www.google.com/calendar/embed?showTitle=0&amp;showPrint=0&amp;showTabs=0&amp;mode=AGENDA&amp;height=471&amp;wkst=2&amp;hl=en_GB&amp;bgcolor=%23ffffff&amp;src=space.xe%40gmail.com&amp;color=%232952A3&amp;src=79kalv7dd1ik6ojeni5vnadqao%40group.calendar.google.com&amp;color=%23A32929&amp;src=2bd35v7pftobdaac8gu99pk407grb4in%40import.calendar.google.com&amp;color=%23333333&amp;src=ht3jlfaac5lfd6263ulfh4tql8%40group.calendar.google.com&amp;color=%237A367A&amp;ctz=Europe%2FOslo"></iframe>
+					<iframe seamless src="https://www.google.com/calendar/embed?showTitle=0&amp;showPrint=0&amp;showTabs=0&amp;mode=AGENDA&amp;height=471&amp;wkst=2&amp;hl=en_GB&amp;bgcolor=%23ffffff&amp;src=space.xe%40gmail.com&amp;color=%232952A3&amp;src=79kalv7dd1ik6ojeni5vnadqao%40group.calendar.google.com&amp;color=%23A32929&amp;src=2bd35v7pftobdaac8gu99pk407grb4in%40import.calendar.google.com&amp;color=%23333333&amp;src=ht3jlfaac5lfd6263ulfh4tql8%40group.calendar.google.com&amp;color=%237A367A&amp;ctz=Europe%2FOslo"></iframe>
 				</div>
 				<div class="notes">
 					<!-- gdocs embed -->
@@ -66,6 +428,7 @@
 				</div>
 				<div class="geodata">
 					<!-- HowIs, local/remote geodata lookup -->
+					<iframe seamless src="http://471.no/HowIs/"></iframe>
 				</div>
 				<div class="tools">
 					<!-- misc. useful things, user-defined code -->
