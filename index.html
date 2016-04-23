@@ -18,7 +18,7 @@
 			}
 			
 			.tabs {
-				top: 7.5em;
+				top: 0;
 				bottom: 0;
 				left: 0;
 				right: 0;
@@ -42,6 +42,7 @@
 			
 			.notes {
 				overflow: hidden;
+				width: 50% !important;
 			}
 			
 			.notes iframe {
@@ -50,12 +51,17 @@
 				display: block;
 				height: calc(100% + 4.76em) !important;
 			}
+			
+			.geodata {
+				width: 100% !important;
+			}
 
 			.appContainer {
+				box-sizing: border-box;
 				position: absolute;
-				background-color: #001;
+				background-color: #EEEEEE;
 				margin: 0 auto;
-				border: 2px solid #13B;
+				border: 0px solid #13B;
 				padding: 0.5em;
 				font-family: "Unifont", sans-serif;
 				font-size: 16px;
@@ -162,7 +168,7 @@
 				content: '';
 				position: absolute;
 				top: 0;
-				 right: 0;
+				right: 0;
 				border-top: 1em solid white;
 				border-left: 1em solid red;
 				width: 0;
@@ -173,7 +179,7 @@
 				content: '';
 				position: absolute;
 				bottom: 0;
-				 left: 0;
+				left: 0;
 				border-bottom: 1em solid white;
 				border-right: 1em solid red;
 				width: 0;
@@ -391,8 +397,8 @@
 				height: 13em;
 				background: none;
 				top: 50%;
-			  left: 50%;
-			  transform: translate(-50%, -50%);
+				left: 50%;
+				transform: translate(-50%, -50%);
 			}
 			
 			/* logo styles end */
@@ -401,64 +407,64 @@
 	<body>
 		<div class="appContainer calendarActive">
 			<div class="notifier"></div>
-			<nav class="tabber">
-				<div class="logo">
-					<div class="outerContainer">
-						<div class="corner topLeft"></div>
-						<div class="corner topRight"></div>
-						<div class="corner bottomLeft"></div>
-						<div class="corner bottomRight"></div>
-						<div class="edge left"></div>
-						<div class="edge top"></div>
-						<div class="edge right"></div>
-						<div class="edge bottom"></div>
-						<div class="innerContainer"></div>
-						<div class="pawPrint">
-							<div class="toe one"></div>
-							<div class="toe two"></div>
-							<div class="toe three"></div>
-							<div class="toe four"></div>
-							<div class="pawPad">
-								<div class="leftPad"></div>
-								<div class="rightPad"></div>
-								<div class="topPad"></div>
-								<div class="bottomCenterPad"></div>
-								<div class="bottomLeftPad"></div>
-								<div class="bottomLeftWallPad"></div>
-								<div class="bottomRightWallPad"></div>
-								<div class="bottomRightPad"></div>
-								<div class="corner one"></div>
-								<div class="corner two"></div>
-								<div class="corner three"></div>
-								<div class="corner four"></div>
-								<div class="fill top"></div>
-								<span class="label">space</span>
-								<div class="fill bottom"></div>
-							</div>
-						</div>
-						
-					</div>
-				</div>
-				<!--<ul>
+			<!--<nav class="tabber">
+				<ul>
 					<li>home</li>
 					<li>calendar</li>
 					<li>notes</li>
 					<li>rss/news</li>
 					<li>geodata</li>
 					<li>tools</li>
-				</ul>-->
-			</nav>
+				</ul>
+			</nav>-->
 			<div class="tabs">
 				<div class="home">
+					<div class="logo">
+						<div class="outerContainer">
+							<div class="corner topLeft"></div>
+							<div class="corner topRight"></div>
+							<div class="corner bottomLeft"></div>
+							<div class="corner bottomRight"></div>
+							<div class="edge left"></div>
+							<div class="edge top"></div>
+							<div class="edge right"></div>
+							<div class="edge bottom"></div>
+							<div class="innerContainer"></div>
+							<div class="pawPrint">
+								<div class="toe one"></div>
+								<div class="toe two"></div>
+								<div class="toe three"></div>
+								<div class="toe four"></div>
+								<div class="pawPad">
+									<div class="leftPad"></div>
+									<div class="rightPad"></div>
+									<div class="topPad"></div>
+									<div class="bottomCenterPad"></div>
+									<div class="bottomLeftPad"></div>
+									<div class="bottomLeftWallPad"></div>
+									<div class="bottomRightWallPad"></div>
+									<div class="bottomRightPad"></div>
+									<div class="corner one"></div>
+									<div class="corner two"></div>
+									<div class="corner three"></div>
+									<div class="corner four"></div>
+									<div class="fill top"></div>
+									<span class="label">space</span>
+									<div class="fill bottom"></div>
+								</div>
+							</div>
+							
+						</div>
+					</div>
 					<!-- text summary -->
-				</div>
-				<div class="calendar">
-					<!-- gcal embed -->
-					<iframe seamless src="https://www.google.com/calendar/embed?showTitle=0&amp;showPrint=0&amp;showTabs=0&amp;mode=AGENDA&amp;height=471&amp;wkst=2&amp;hl=en_GB&amp;bgcolor=%23ffffff&amp;src=space.xe%40gmail.com&amp;color=%232952A3&amp;src=79kalv7dd1ik6ojeni5vnadqao%40group.calendar.google.com&amp;color=%23A32929&amp;src=simk42st8rq53q75h25ofqfgurfrtn49%40import.calendar.google.com&amp;color=%23333333&amp;src=ht3jlfaac5lfd6263ulfh4tql8%40group.calendar.google.com&amp;color=%237A367A&amp;ctz=Europe%2FOslo"></iframe>
 				</div>
 				<div class="notes">
 					<!-- gdocs embed -->
 					<iframe seamless src="https://docs.google.com/document/d/1HKtq_k5pFF1e-ML8iktBLC85_TfrA1g5n6CiQwPoJAg/edit?usp=sharing"></iframe>
+				</div>
+				<div class="calendar">
+					<!-- gcal embed -->
+					<iframe seamless src="https://www.google.com/calendar/embed?showTitle=0&amp;showPrint=0&amp;showTabs=0&amp;mode=AGENDA&amp;height=471&amp;wkst=2&amp;hl=en_GB&amp;bgcolor=%23ffffff&amp;src=space.xe%40gmail.com&amp;color=%232952A3&amp;src=79kalv7dd1ik6ojeni5vnadqao%40group.calendar.google.com&amp;color=%23A32929&amp;src=simk42st8rq53q75h25ofqfgurfrtn49%40import.calendar.google.com&amp;color=%23333333&amp;src=ht3jlfaac5lfd6263ulfh4tql8%40group.calendar.google.com&amp;color=%237A367A&amp;ctz=Europe%2FOslo"></iframe>
 				</div>
 				<div class="geodata">
 					<!-- HowIs, local/remote geodata lookup -->
